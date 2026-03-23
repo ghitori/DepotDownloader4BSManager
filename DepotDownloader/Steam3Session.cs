@@ -706,18 +706,21 @@ namespace DepotDownloader
 
         private static void DisplayQrCode(string challengeUrl)
         {
-            // Encode the link as a QR code
-            using var qrGenerator = new QRCodeGenerator();
-            var qrCodeData = qrGenerator.CreateQrCode(challengeUrl, QRCodeGenerator.ECCLevel.L);
-            using var qrCode = new AsciiQRCode(qrCodeData);
-            var qrCodeAsAsciiArt = qrCode.GetLineByLineGraphic(1, drawQuietZones: true);
+            // Mod for BSManager
+            Console.WriteLine("[Info]|[QRCode]|{0}", challengeUrl);
 
-            Console.WriteLine("Use the Steam Mobile App to sign in with this QR code:");
+            // // Encode the link as a QR code
+            // using var qrGenerator = new QRCodeGenerator();
+            // var qrCodeData = qrGenerator.CreateQrCode(challengeUrl, QRCodeGenerator.ECCLevel.L);
+            // using var qrCode = new AsciiQRCode(qrCodeData);
+            // var qrCodeAsAsciiArt = qrCode.GetLineByLineGraphic(1, drawQuietZones: true);
 
-            foreach (var line in qrCodeAsAsciiArt)
-            {
-                Console.WriteLine(line);
-            }
+            // Console.WriteLine("Use the Steam Mobile App to sign in with this QR code:");
+
+            // foreach (var line in qrCodeAsAsciiArt)
+            // {
+            //     Console.WriteLine(line);
+            // }
         }
     }
 }
